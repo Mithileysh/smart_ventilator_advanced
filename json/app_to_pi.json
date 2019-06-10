@@ -1,0 +1,11 @@
+{
+    "command": "on_fan | off_fan | check_fan | check_auto | on_auto | off_auto | get_current | get_data | set_limit | get_limit | set_safe | get_limit",
+    "datatype": "co | co2 | pm10 | pm25",
+    "modified_value": {
+        "co":0,
+        "co2":0,
+        "pm25":0,
+        "pm10":0
+    },
+    "offset": "today | yesterday"
+}

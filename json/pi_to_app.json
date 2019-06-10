@@ -1,0 +1,18 @@
+{
+    "current": 
+    {
+        "co":0,
+        "co2":0,
+        "pm25":0,
+        "pm10":0
+    },
+    "data": 
+    [
+        {
+            "time": "??:??:??",
+            "value":0
+        }
+    ],
+    "fan_on": true,
+    "auto_on": true
+}
