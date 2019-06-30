@@ -1,0 +1,18 @@
+create database smart_vent default character set utf8;
+create user admin@localhost identified by '1234';gr
+grant all privileges on smart_vent.* to admin@localhost;
+
+use smart_vent;
+create table sensing
+(
+    _index INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    pm10 FLOAT NOT NULL,
+    pm25 FLOAT NOT NULL,
+    co FLOAT NOT NULL,
+    co2 FLOAT NOT NULL,
+    form FLOAT NOT NULL,
+    time datetime NOT NULL,
+    log varchar(20)
+)engine=INNODB;
+
+desc sensing;
