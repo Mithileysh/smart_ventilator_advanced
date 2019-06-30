@@ -5,7 +5,8 @@
         "co":0,
         "co2":0,
         "pm25":0,
-        "pm10":0
+        "pm10":0,
+        "form":0
     },
     "offset": "today | yesterday"
 }
