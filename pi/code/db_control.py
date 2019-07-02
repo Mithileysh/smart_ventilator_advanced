@@ -43,12 +43,12 @@ class DBController:
         self.locker.release()
         pass
     
-    def insert_sensing(self, pm10, pm25, co, co2, log):
+    def insert_sensing(self, pm10, pm25, co, co2, form, log):
         self.locker.acquire()
         
         #self.connect()
         
-        query = 'INSERT INTO sensing VALUES(0, now(), {}, {}, {}, {}, "");'.format(pm10, pm25, co, co2, log)
+        query = 'INSERT INTO sensing VALUES(0, now(), {}, {}, {}, {}, "");'.format(pm10, pm25, co, co2, form, log)
         self.cursor.execute(query)
         
         self.connector.commit()
