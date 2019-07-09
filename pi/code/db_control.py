@@ -48,11 +48,15 @@ class DBController:
         
         #self.connect()
         
-        query = 'INSERT INTO sensing VALUES(0, now(), {}, {}, {}, {}, "");'.format(pm10, pm25, co, co2, form, log)
-        self.cursor.execute(query)
-        
-        self.connector.commit()
-        
+        try:
+            query = 'INSERT INTO sensing(time, pm10, pm25, co, co2, form, log) VALUES(now(), {}, {}, {}, {}, {}, "");' \
+                    .format(pm10, pm25, co, co2, form)
+            self.cursor.execute(query)
+            
+            self.connector.commit()
+        except Exception as e:
+            print('error!!!')
+            print(e)
         
         
         self.locker.release()

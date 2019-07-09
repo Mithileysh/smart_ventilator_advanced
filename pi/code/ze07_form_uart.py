@@ -1,7 +1,7 @@
 import serial
 
 
-S_PORT = "/dev/ttyUSB0"
+S_PORT = "/dev/ttyUSB1"
 
 
 class Ze07UartReader:

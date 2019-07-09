@@ -7,6 +7,12 @@ import ze07_co_uart as co
 import pms7003 as pm
 import ze07_form_uart as form
 
+
+co.S_PORT = "/dev/ttyUSB0"
+pm.S_PORT = "/dev/ttyUSB2"
+form.S_PORT = "/dev/ttyUSB1"
+
+
 import datetime
 import time
 
@@ -83,11 +89,12 @@ class SensingHandler:
                     print('')
                 #test end
                 
+
                 shared_data.datas.set_sensing(pm_values['pm1.0'], \
                                               pm_values['pm2.5'], \
                                               co_value, co2_value, \
-                                              form_value)
-                
+                                              form_value)             
+               
                 
                 now_minute = datetime.datetime.now().minute
                 if start_minute==now_minute:
@@ -97,12 +104,13 @@ class SensingHandler:
                     else:
                         start_minute = 0
                         pass
-                    
+                
                     self.db_controller.insert_sensing \
                       (pm10=pm_values['pm10'], \
                        pm25=pm_values['pm2.5'], \
                        co=co_value, co2=co2_value, form=form_value, log='')
-                    pass
+                      
+                    #pass
                 
                     
             except:

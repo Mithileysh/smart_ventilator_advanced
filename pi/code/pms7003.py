@@ -1,7 +1,7 @@
 import serial
 import platform
 
-S_PORT = "/dev/ttyUSB1"
+S_PORT = "/dev/ttyUSB2"
 
 p_ver = platform.python_version_tuple()[0]
 
